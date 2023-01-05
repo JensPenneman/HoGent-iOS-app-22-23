@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import Supabase
+
+struct RESTClient {
+    static let shared: SupabaseClient = SupabaseClient(supabaseURL: ClientConstants.SupabaseURL, supabaseKey: ClientConstants.SupabaseKEY)
+}
