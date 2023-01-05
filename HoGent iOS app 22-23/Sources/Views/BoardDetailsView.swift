@@ -12,7 +12,7 @@ struct BoardDetailsView: View {
     
     var body: some View {
         switch navigationState {
-        case .boardMember(let boardMember): BoardMemberDetailsView()
+        case .boardMember(let boardMember): BoardMemberDetailsView(boardMember: boardMember)
         case .boardTask(let boardTask): BoardTaskDetailsView(boardTask: boardTask)
         }
     }

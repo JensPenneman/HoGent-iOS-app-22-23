@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct BoardMemberDetailsView: View {
+    let boardMember: BoardMember
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+        }
+        .navigationTitle("\(boardMember.firstname) \(boardMember.lastname)")
     }
 }
 
 struct BoardMemberDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardMemberDetailsView()
+        BoardMemberDetailsView(boardMember:
+            BoardMember(
+                id: UUID(),
+                firstname: "Jens",
+                lastname: "Penneman",
+                mail: "jenspenneman@gmail.com",
+                boardtasks: [
+                    BoardTask(
+                        id: UUID(),
+                        name: "Example task")
+                ]
+            )
+        )
     }
 }
