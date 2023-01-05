@@ -12,7 +12,8 @@ class BoardTaskViewModel: ObservableObject {
     @Published var boardTasks: [BoardTask] = []
     private lazy var client = RESTClient.shared
     
-    init() {
+    static let shared = BoardTaskViewModel()
+    private init() {
         Task {
             try? await refreshBoardTasks()
         }
@@ -38,6 +39,20 @@ class BoardTaskViewModel: ObservableObject {
             self.boardTasks.removeAll { boardTask in !boardTasks.contains(boardTask) }
             self.boardTasks.append(contentsOf: boardTasks.filter({ boardTask in !self.boardTasks.contains(boardTask) }))
         }
+    }
+    
+    func addBoardTask(_ boardTask: BoardTask) async {
+        await addBoardTask(name: boardTask.name)
+    }
+    
+    func addBoardTask(name: String) async {
+        let query = client
+            .database
+            .from("boardtasks")
+            .insert(values: ["name": name])
+        
+        await execute(query)
+        try? await refreshBoardTasks()
     }
     
     func deleteBoardTask(_ boardTask: BoardTask) async {

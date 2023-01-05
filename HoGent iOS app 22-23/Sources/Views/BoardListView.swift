@@ -9,9 +9,10 @@ import SwiftUI
 
 struct BoardListView: View {
     @StateObject private var boardMemberViewModel = BoardMemberViewModel.shared
-    @StateObject private var boardTaskViewModel = BoardTaskViewModel()
+    @StateObject private var boardTaskViewModel = BoardTaskViewModel.shared
     
     @State private var showMemberCreateSheet = false
+    @State private var showTaskCreateSheet = false
     
     var body: some View {
         List {
@@ -27,10 +28,12 @@ struct BoardListView: View {
                     NavigationLink(boardTask.name, value: NavigationState.boardTask(boardTask))
                 }
                 .onDelete(perform: deleteTask)
+                BoardTaskCreateButtonView(isActive: $showTaskCreateSheet)
             } header: { Label("Board tasks", systemImage: "list.bullet") }
         }
         .refreshable { await refresh() }
         .sheet(isPresented: $showMemberCreateSheet) { BoardMemberCreateView(isPresenting: $showMemberCreateSheet) }
+        .sheet(isPresented: $showTaskCreateSheet) { BoardTaskCreateView(isPresenting: $showTaskCreateSheet) }
     }
     
     private func refresh() async {

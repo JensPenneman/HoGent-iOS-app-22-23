@@ -12,7 +12,6 @@ class BoardMemberViewModel: ObservableObject {
     @Published var boardMembers: [BoardMember] = []
     private lazy var client = RESTClient.shared
     
-    
     static let shared = BoardMemberViewModel()
     private init() {
         Task {
