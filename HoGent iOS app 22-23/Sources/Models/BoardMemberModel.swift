@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct BoardMember: Identifiable, Codable, Hashable {
+    var id: UUID
+    var firstname: String
+    var lastname: String
+    var mail: String
+    var boardtasks: [BoardTask]
+}

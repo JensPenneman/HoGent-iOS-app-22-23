@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct BoardTask: Identifiable, Codable, Hashable {
+    var id: UUID
+    var name: String
+}
