@@ -6,3 +6,11 @@
 //
 
 import SwiftUI
+
+final class NavigationManager: ObservableObject {
+    @Published var navigationPath: [NavigationState]
+    
+    init(_ navigationPath: [NavigationState] = []) {
+        self.navigationPath = navigationPath
+    }
+}

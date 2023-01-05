@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum NavigationState: Hashable {
+    case boardMember(BoardMember)
+    case boardTask(BoardTask)
+}
