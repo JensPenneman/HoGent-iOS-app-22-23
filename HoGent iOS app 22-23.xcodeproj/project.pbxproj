@@ -11,6 +11,7 @@
 		64B56A132967591E0024A2CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A122967591E0024A2CC /* ContentView.swift */; };
 		64B56A152967591F0024A2CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B56A142967591F0024A2CC /* Assets.xcassets */; };
 		64B56A182967591F0024A2CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B56A172967591F0024A2CC /* Preview Assets.xcassets */; };
+		64B56A2029675EFC0024A2CC /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 64B56A1F29675EFC0024A2CC /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B56A2029675EFC0024A2CC /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "HoGent iOS app 22-23";
+			packageProductDependencies = (
+				64B56A1F29675EFC0024A2CC /* Supabase */,
+			);
 			productName = "HoGent iOS app 22-23";
 			productReference = 64B56A0D2967591E0024A2CC /* HoGent iOS app 22-23.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 64B56A042967591E0024A2CC;
+			packageReferences = (
+				64B56A1E29675EFC0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 64B56A0E2967591E0024A2CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,8 +281,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,8 +309,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +345,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		64B56A1E29675EFC0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		64B56A1F29675EFC0024A2CC /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64B56A1E29675EFC0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 64B56A052967591E0024A2CC /* Project object */;
 }
