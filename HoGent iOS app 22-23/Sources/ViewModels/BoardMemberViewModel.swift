@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PostgREST
 
 class BoardMemberViewModel: ObservableObject {
     @Published var boardMembers: [BoardMember] = []
@@ -36,6 +37,31 @@ class BoardMemberViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.boardMembers.removeAll { boardMember in true }
             self.boardMembers.append(contentsOf: boardMembers)
+        }
+    }
+    
+    func deleteBoardMember(_ boardMember: BoardMember) async {
+        await deleteBoardMember(by: boardMember.id)
+    }
+    
+    private func deleteBoardMember(by id: UUID) async {
+        let query = client
+            .database
+            .from("boardmembers")
+            .delete()
+            .equals(column: "id", value: id.uuidString)
+        
+        //FIXME: Unrelate all tasks before deleting, otherwise delete won't work
+        await execute(query)
+        try? await refreshBoardMembers()
+    }
+    
+    
+    private func execute(_ query: PostgrestFilterBuilder) async {
+        do{
+            _ = try await query.execute()
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

@@ -16,6 +16,7 @@ struct BoardListView: View {
                 ForEach(boardMemberViewModel.boardMembers, id: \.self.id) { boardMember in
                     NavigationLink("\(boardMember.firstname) \(boardMember.lastname)", value: NavigationState.boardMember(boardMember))
                 }
+                .onDelete(perform: deleteMember)
             } header: { Label("Board members", systemImage: "person.3") }
             Section {  } header: { Label("Board tasks", systemImage: "list.bullet") }
         }
@@ -24,6 +25,14 @@ struct BoardListView: View {
     
     private func refresh() async {
         try? await boardMemberViewModel.refreshBoardMembers()
+    }
+    
+    private func deleteMember(at indexSet: IndexSet) {
+        for index in indexSet { delete(boardMemberViewModel.boardMembers[index]) }
+    }
+    
+    private func delete(_ boardMember: BoardMember) {
+        Task { await boardMemberViewModel.deleteBoardMember(boardMember) }
     }
 }
 
