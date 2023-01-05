@@ -12,7 +12,9 @@ class BoardMemberViewModel: ObservableObject {
     @Published var boardMembers: [BoardMember] = []
     private lazy var client = RESTClient.shared
     
-    init() {
+    
+    static let shared = BoardMemberViewModel()
+    private init() {
         Task {
             try? await refreshBoardMembers()
         }
@@ -35,11 +37,29 @@ class BoardMemberViewModel: ObservableObject {
         }
         
         DispatchQueue.main.async {
-            self.boardMembers.removeAll { boardMember in true }
-            self.boardMembers.append(contentsOf: boardMembers)
+            self.boardMembers.removeAll { boardMember in !boardMembers.contains(boardMember) }
+            self.boardMembers.append(contentsOf: boardMembers.filter({ boardMember in !self.boardMembers.contains(boardMember)}))
         }
     }
     
+    func addBoardMember(_ boardmember: BoardMember) async {
+        await addBoardMember(firstname: boardmember.firstname, lastname: boardmember.lastname, mail: boardmember.mail)
+    }
+    
+    func addBoardMember(firstname: String, lastname: String, mail: String) async {
+        let query = client
+            .database
+            .from("boardmembers")
+            .insert(values: [
+                "firstname": firstname,
+                "lastname": lastname,
+                "mail": mail
+            ])
+        
+        await execute(query)
+        try? await refreshBoardMembers()
+    }
+        
     func deleteBoardMember(_ boardMember: BoardMember) async {
         await deleteBoardMember(by: boardMember.id)
     }

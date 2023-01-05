@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct BoardListView: View {
-    @StateObject private var boardMemberViewModel = BoardMemberViewModel()
+    @StateObject private var boardMemberViewModel = BoardMemberViewModel.shared
+    @StateObject private var boardTaskViewModel = BoardTaskViewModel()
+    
+    @State private var showMemberCreateSheet = false
     
     var body: some View {
         List {
@@ -17,14 +20,22 @@ struct BoardListView: View {
                     NavigationLink("\(boardMember.firstname) \(boardMember.lastname)", value: NavigationState.boardMember(boardMember))
                 }
                 .onDelete(perform: deleteMember)
+                BoardMemberCreateButtonView(isActive: $showMemberCreateSheet)
             } header: { Label("Board members", systemImage: "person.3") }
-            Section {  } header: { Label("Board tasks", systemImage: "list.bullet") }
+            Section {
+                ForEach(boardTaskViewModel.boardTasks, id: \.self.id) { boardTask in
+                    NavigationLink(boardTask.name, value: NavigationState.boardTask(boardTask))
+                }
+                .onDelete(perform: deleteTask)
+            } header: { Label("Board tasks", systemImage: "list.bullet") }
         }
         .refreshable { await refresh() }
+        .sheet(isPresented: $showMemberCreateSheet) { BoardMemberCreateView(isPresenting: $showMemberCreateSheet) }
     }
     
     private func refresh() async {
         try? await boardMemberViewModel.refreshBoardMembers()
+        try? await boardTaskViewModel.refreshBoardTasks()
     }
     
     private func deleteMember(at indexSet: IndexSet) {
@@ -33,6 +44,14 @@ struct BoardListView: View {
     
     private func delete(_ boardMember: BoardMember) {
         Task { await boardMemberViewModel.deleteBoardMember(boardMember) }
+    }
+    
+    private func deleteTask(at indexSet: IndexSet) {
+        for index in indexSet { delete(boardTaskViewModel.boardTasks[index]) }
+    }
+    
+    private func delete(_ boardTask: BoardTask) {
+        Task { await boardTaskViewModel.deleteBoardTask(boardTask) }
     }
 }
 
