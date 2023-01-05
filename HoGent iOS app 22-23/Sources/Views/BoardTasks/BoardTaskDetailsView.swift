@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct BoardTaskDetailsView: View {
+    let boardTask: BoardTask
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Board tasks have nothing more than a name!")
+        .navigationTitle(boardTask.name)
     }
 }
 
 struct BoardTaskDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardTaskDetailsView()
+        BoardTaskDetailsView(boardTask: BoardTask(id: UUID(), name: "Example task"))
     }
 }
