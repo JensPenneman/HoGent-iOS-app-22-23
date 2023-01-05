@@ -11,7 +11,6 @@
 		64B56A132967591E0024A2CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A122967591E0024A2CC /* ContentView.swift */; };
 		64B56A152967591F0024A2CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B56A142967591F0024A2CC /* Assets.xcassets */; };
 		64B56A182967591F0024A2CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B56A172967591F0024A2CC /* Preview Assets.xcassets */; };
-		64B56A2029675EFC0024A2CC /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 64B56A1F29675EFC0024A2CC /* Supabase */; };
 		64B56A2A296760E50024A2CC /* Supabase+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A29296760E50024A2CC /* Supabase+Constants.swift */; };
 		64B56A2C2967618F0024A2CC /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A2B2967618F0024A2CC /* NavigationState.swift */; };
 		64B56A2E296762270024A2CC /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A2D296762270024A2CC /* RESTClient.swift */; };
@@ -27,6 +26,8 @@
 		64B56A44296763A90024A2CC /* BoardMemberCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A43296763A90024A2CC /* BoardMemberCreateView.swift */; };
 		64B56A46296763BA0024A2CC /* BoardMemberRelateToTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A45296763BA0024A2CC /* BoardMemberRelateToTaskView.swift */; };
 		64B56A4829676D500024A2CC /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A4729676D500024A2CC /* BoardListView.swift */; };
+		64B56A4F296778D60024A2CC /* GoTrue in Frameworks */ = {isa = PBXBuildFile; productRef = 64B56A4E296778D60024A2CC /* GoTrue */; };
+		64B56A52296778ED0024A2CC /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 64B56A51296778ED0024A2CC /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64B56A2029675EFC0024A2CC /* Supabase in Frameworks */,
+				64B56A52296778ED0024A2CC /* Supabase in Frameworks */,
+				64B56A4F296778D60024A2CC /* GoTrue in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +213,8 @@
 			);
 			name = "HoGent iOS app 22-23";
 			packageProductDependencies = (
-				64B56A1F29675EFC0024A2CC /* Supabase */,
+				64B56A4E296778D60024A2CC /* GoTrue */,
+				64B56A51296778ED0024A2CC /* Supabase */,
 			);
 			productName = "HoGent iOS app 22-23";
 			productReference = 64B56A0D2967591E0024A2CC /* HoGent iOS app 22-23.app */;
@@ -242,7 +245,8 @@
 			);
 			mainGroup = 64B56A042967591E0024A2CC;
 			packageReferences = (
-				64B56A1E29675EFC0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				64B56A4D296778D60024A2CC /* XCRemoteSwiftPackageReference "gotrue-swift" */,
+				64B56A50296778ED0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = 64B56A0E2967591E0024A2CC /* Products */;
 			projectDirPath = "";
@@ -487,20 +491,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		64B56A1E29675EFC0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+		64B56A4D296778D60024A2CC /* XCRemoteSwiftPackageReference "gotrue-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/gotrue-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 0.0.9;
+			};
+		};
+		64B56A50296778ED0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 0.0.11;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		64B56A1F29675EFC0024A2CC /* Supabase */ = {
+		64B56A4E296778D60024A2CC /* GoTrue */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 64B56A1E29675EFC0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = 64B56A4D296778D60024A2CC /* XCRemoteSwiftPackageReference "gotrue-swift" */;
+			productName = GoTrue;
+		};
+		64B56A51296778ED0024A2CC /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64B56A50296778ED0024A2CC /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */

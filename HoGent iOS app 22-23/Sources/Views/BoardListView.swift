@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct BoardListView: View {
+    @StateObject private var boardMemberViewModel = BoardMemberViewModel()
+    
     var body: some View {
         List {
-            Section {  } header: { Label("Board members", systemImage: "person.3") }
+            Section {
+                ForEach(boardMemberViewModel.boardMembers, id: \.self.id) { boardMember in
+                    NavigationLink("\(boardMember.firstname) \(boardMember.lastname)", value: NavigationState.boardMember(boardMember))
+                }
+            } header: { Label("Board members", systemImage: "person.3") }
             Section {  } header: { Label("Board tasks", systemImage: "list.bullet") }
         }
-//        .refreshable {  } TODO: Add refreshable function
+        .refreshable { await refresh() }
+    }
+    
+    private func refresh() async {
+        try? await boardMemberViewModel.refreshBoardMembers()
     }
 }
 
