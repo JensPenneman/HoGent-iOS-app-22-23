@@ -12,6 +12,20 @@
 		64B56A152967591F0024A2CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B56A142967591F0024A2CC /* Assets.xcassets */; };
 		64B56A182967591F0024A2CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B56A172967591F0024A2CC /* Preview Assets.xcassets */; };
 		64B56A2029675EFC0024A2CC /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 64B56A1F29675EFC0024A2CC /* Supabase */; };
+		64B56A2A296760E50024A2CC /* Supabase+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A29296760E50024A2CC /* Supabase+Constants.swift */; };
+		64B56A2C2967618F0024A2CC /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A2B2967618F0024A2CC /* NavigationState.swift */; };
+		64B56A2E296762270024A2CC /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A2D296762270024A2CC /* RESTClient.swift */; };
+		64B56A30296762380024A2CC /* BoardMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A2F296762380024A2CC /* BoardMemberModel.swift */; };
+		64B56A32296762420024A2CC /* BoardTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A31296762420024A2CC /* BoardTaskModel.swift */; };
+		64B56A342967624F0024A2CC /* BoardMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A332967624F0024A2CC /* BoardMemberViewModel.swift */; };
+		64B56A362967626B0024A2CC /* BoardTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A352967626B0024A2CC /* BoardTaskViewModel.swift */; };
+		64B56A382967627C0024A2CC /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A372967627C0024A2CC /* NavigationViewModel.swift */; };
+		64B56A3C296762F70024A2CC /* BoardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A3B296762F70024A2CC /* BoardDetailsView.swift */; };
+		64B56A3E296763640024A2CC /* BoardTaskDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A3D296763640024A2CC /* BoardTaskDetailsView.swift */; };
+		64B56A40296763750024A2CC /* BoardTaskCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A3F296763750024A2CC /* BoardTaskCreateView.swift */; };
+		64B56A42296763A10024A2CC /* BoardMemberDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A41296763A10024A2CC /* BoardMemberDetailsView.swift */; };
+		64B56A44296763A90024A2CC /* BoardMemberCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A43296763A90024A2CC /* BoardMemberCreateView.swift */; };
+		64B56A46296763BA0024A2CC /* BoardMemberRelateToTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A45296763BA0024A2CC /* BoardMemberRelateToTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +34,20 @@
 		64B56A122967591E0024A2CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64B56A142967591F0024A2CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64B56A172967591F0024A2CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		64B56A29296760E50024A2CC /* Supabase+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Supabase+Constants.swift"; sourceTree = "<group>"; };
+		64B56A2B2967618F0024A2CC /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		64B56A2D296762270024A2CC /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
+		64B56A2F296762380024A2CC /* BoardMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberModel.swift; sourceTree = "<group>"; };
+		64B56A31296762420024A2CC /* BoardTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTaskModel.swift; sourceTree = "<group>"; };
+		64B56A332967624F0024A2CC /* BoardMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberViewModel.swift; sourceTree = "<group>"; };
+		64B56A352967626B0024A2CC /* BoardTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTaskViewModel.swift; sourceTree = "<group>"; };
+		64B56A372967627C0024A2CC /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		64B56A3B296762F70024A2CC /* BoardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDetailsView.swift; sourceTree = "<group>"; };
+		64B56A3D296763640024A2CC /* BoardTaskDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTaskDetailsView.swift; sourceTree = "<group>"; };
+		64B56A3F296763750024A2CC /* BoardTaskCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTaskCreateView.swift; sourceTree = "<group>"; };
+		64B56A41296763A10024A2CC /* BoardMemberDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberDetailsView.swift; sourceTree = "<group>"; };
+		64B56A43296763A90024A2CC /* BoardMemberCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberCreateView.swift; sourceTree = "<group>"; };
+		64B56A45296763BA0024A2CC /* BoardMemberRelateToTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberRelateToTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +81,8 @@
 		64B56A0F2967591E0024A2CC /* HoGent iOS app 22-23 */ = {
 			isa = PBXGroup;
 			children = (
-				64B56A102967591E0024A2CC /* HoGent_iOS_app_22_23App.swift */,
-				64B56A122967591E0024A2CC /* ContentView.swift */,
-				64B56A142967591F0024A2CC /* Assets.xcassets */,
+				64B56A2229675FCF0024A2CC /* Sources */,
+				64B56A2129675FC00024A2CC /* Resources */,
 				64B56A162967591F0024A2CC /* Preview Content */,
 			);
 			path = "HoGent iOS app 22-23";
@@ -67,6 +94,101 @@
 				64B56A172967591F0024A2CC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		64B56A2129675FC00024A2CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A142967591F0024A2CC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		64B56A2229675FCF0024A2CC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A102967591E0024A2CC /* HoGent_iOS_app_22_23App.swift */,
+				64B56A2829675FFF0024A2CC /* Views */,
+				64B56A2729675FF70024A2CC /* ViewModels */,
+				64B56A2629675FF00024A2CC /* Models */,
+				64B56A2529675FEB0024A2CC /* Clients */,
+				64B56A2429675FE60024A2CC /* Enums */,
+				64B56A2329675FDB0024A2CC /* Extentions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		64B56A2329675FDB0024A2CC /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A29296760E50024A2CC /* Supabase+Constants.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		64B56A2429675FE60024A2CC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A2B2967618F0024A2CC /* NavigationState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		64B56A2529675FEB0024A2CC /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A2D296762270024A2CC /* RESTClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		64B56A2629675FF00024A2CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A2F296762380024A2CC /* BoardMemberModel.swift */,
+				64B56A31296762420024A2CC /* BoardTaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		64B56A2729675FF70024A2CC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A332967624F0024A2CC /* BoardMemberViewModel.swift */,
+				64B56A352967626B0024A2CC /* BoardTaskViewModel.swift */,
+				64B56A372967627C0024A2CC /* NavigationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		64B56A2829675FFF0024A2CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A122967591E0024A2CC /* ContentView.swift */,
+				64B56A3B296762F70024A2CC /* BoardDetailsView.swift */,
+				64B56A3A296762D60024A2CC /* BoardMembers */,
+				64B56A39296762CC0024A2CC /* BoardTasks */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64B56A39296762CC0024A2CC /* BoardTasks */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A3D296763640024A2CC /* BoardTaskDetailsView.swift */,
+				64B56A3F296763750024A2CC /* BoardTaskCreateView.swift */,
+			);
+			path = BoardTasks;
+			sourceTree = "<group>";
+		};
+		64B56A3A296762D60024A2CC /* BoardMembers */ = {
+			isa = PBXGroup;
+			children = (
+				64B56A41296763A10024A2CC /* BoardMemberDetailsView.swift */,
+				64B56A43296763A90024A2CC /* BoardMemberCreateView.swift */,
+				64B56A45296763BA0024A2CC /* BoardMemberRelateToTaskView.swift */,
+			);
+			path = BoardMembers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +267,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B56A32296762420024A2CC /* BoardTaskModel.swift in Sources */,
+				64B56A3E296763640024A2CC /* BoardTaskDetailsView.swift in Sources */,
+				64B56A342967624F0024A2CC /* BoardMemberViewModel.swift in Sources */,
+				64B56A30296762380024A2CC /* BoardMemberModel.swift in Sources */,
+				64B56A42296763A10024A2CC /* BoardMemberDetailsView.swift in Sources */,
 				64B56A132967591E0024A2CC /* ContentView.swift in Sources */,
+				64B56A2C2967618F0024A2CC /* NavigationState.swift in Sources */,
 				64B56A112967591E0024A2CC /* HoGent_iOS_app_22_23App.swift in Sources */,
+				64B56A382967627C0024A2CC /* NavigationViewModel.swift in Sources */,
+				64B56A40296763750024A2CC /* BoardTaskCreateView.swift in Sources */,
+				64B56A2E296762270024A2CC /* RESTClient.swift in Sources */,
+				64B56A2A296760E50024A2CC /* Supabase+Constants.swift in Sources */,
+				64B56A44296763A90024A2CC /* BoardMemberCreateView.swift in Sources */,
+				64B56A362967626B0024A2CC /* BoardTaskViewModel.swift in Sources */,
+				64B56A46296763BA0024A2CC /* BoardMemberRelateToTaskView.swift in Sources */,
+				64B56A3C296762F70024A2CC /* BoardDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
