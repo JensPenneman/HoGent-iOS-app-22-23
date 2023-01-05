@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct BoardDetailsView: View {
+    let navigationState: NavigationState
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        switch navigationState {
+        case .boardMember(let boardMember): BoardMemberDetailsView()
+        case .boardTask(let boardTask): BoardTaskDetailsView()
+        }
     }
 }
 
-struct BoardDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        BoardDetailsView()
-    }
-}
+//struct BoardDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BoardDetailsView()
+//    }
+//}

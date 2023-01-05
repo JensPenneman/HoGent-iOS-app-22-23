@@ -12,7 +12,10 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack (path: $navigationManager.navigationPath) {
-            Text("Hello world")
+            BoardListView()
+                .navigationTitle("KLJ Stekene's board")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(for: NavigationState.self) { navigationState in BoardDetailsView(navigationState: navigationState) }
         }
     }
 }

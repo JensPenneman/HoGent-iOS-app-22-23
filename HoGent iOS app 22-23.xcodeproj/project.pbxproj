@@ -26,6 +26,7 @@
 		64B56A42296763A10024A2CC /* BoardMemberDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A41296763A10024A2CC /* BoardMemberDetailsView.swift */; };
 		64B56A44296763A90024A2CC /* BoardMemberCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A43296763A90024A2CC /* BoardMemberCreateView.swift */; };
 		64B56A46296763BA0024A2CC /* BoardMemberRelateToTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A45296763BA0024A2CC /* BoardMemberRelateToTaskView.swift */; };
+		64B56A4829676D500024A2CC /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B56A4729676D500024A2CC /* BoardListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		64B56A41296763A10024A2CC /* BoardMemberDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberDetailsView.swift; sourceTree = "<group>"; };
 		64B56A43296763A90024A2CC /* BoardMemberCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberCreateView.swift; sourceTree = "<group>"; };
 		64B56A45296763BA0024A2CC /* BoardMemberRelateToTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMemberRelateToTaskView.swift; sourceTree = "<group>"; };
+		64B56A4729676D500024A2CC /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				64B56A122967591E0024A2CC /* ContentView.swift */,
+				64B56A4729676D500024A2CC /* BoardListView.swift */,
 				64B56A3B296762F70024A2CC /* BoardDetailsView.swift */,
 				64B56A3A296762D60024A2CC /* BoardMembers */,
 				64B56A39296762CC0024A2CC /* BoardTasks */,
@@ -274,6 +277,7 @@
 				64B56A42296763A10024A2CC /* BoardMemberDetailsView.swift in Sources */,
 				64B56A132967591E0024A2CC /* ContentView.swift in Sources */,
 				64B56A2C2967618F0024A2CC /* NavigationState.swift in Sources */,
+				64B56A4829676D500024A2CC /* BoardListView.swift in Sources */,
 				64B56A112967591E0024A2CC /* HoGent_iOS_app_22_23App.swift in Sources */,
 				64B56A382967627C0024A2CC /* NavigationViewModel.swift in Sources */,
 				64B56A40296763750024A2CC /* BoardTaskCreateView.swift in Sources */,
