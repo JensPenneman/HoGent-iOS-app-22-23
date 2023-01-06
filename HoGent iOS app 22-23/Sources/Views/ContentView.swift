@@ -17,6 +17,7 @@ struct ContentView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: NavigationState.self) { navigationState in BoardDetailsView(navigationState: navigationState) }
         }
+        .environmentObject(navigationManager)
     }
 }
 

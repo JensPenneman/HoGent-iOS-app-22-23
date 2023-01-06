@@ -58,12 +58,45 @@ class BoardMemberViewModel: ObservableObject {
         await execute(query)
         try? await refreshBoardMembers()
     }
+    
+    func relate(task boardTask: BoardTask, to boardMember: BoardMember) async {
+        await relate(task: boardTask.id, to: boardMember.id)
+    }
+    
+    func relate(task boardTaskId: UUID, to boardMemberId: UUID) async {
+        let query = client
+            .database
+            .from("boardmembershaveboardtasks")
+            .insert(values: [
+                "board_member_id": boardMemberId.uuidString,
+                "board_task_id": boardTaskId.uuidString
+            ])
         
+        await execute(query)
+        try? await refreshBoardMembers()
+    }
+    
+    func unrelate(task boardTask: BoardTask, from boardMember: BoardMember) async {
+        await unrelate(task: boardTask.id, from: boardMember.id)
+    }
+    
+    func unrelate(task taskId: UUID, from memberId: UUID) async {
+        let query = client
+            .database
+            .from("boardmembershaveboardtasks")
+            .delete()
+            .equals(column: "board_member_id", value: memberId.uuidString)
+            .equals(column: "board_task_id", value: taskId.uuidString)
+        
+        await execute(query)
+        try? await refreshBoardMembers()
+    }
+    
     func deleteBoardMember(_ boardMember: BoardMember) async {
         await deleteBoardMember(by: boardMember.id)
     }
     
-    private func deleteBoardMember(by id: UUID) async {
+    func deleteBoardMember(by id: UUID) async {
         let query = client
             .database
             .from("boardmembers")
