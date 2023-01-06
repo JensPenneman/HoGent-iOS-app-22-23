@@ -50,7 +50,7 @@ struct BoardMemberRelateToTaskView: View {
     }
     
     private func refresh() async {
-        let _ = try? await boardMemberViewModel.refreshBoardMembers()
+        try? await boardMemberViewModel.refreshBoardMembers()
         navigationManager.navigationPath.removeLast()
         navigationManager.navigationPath.append(
             NavigationState.boardMember(
