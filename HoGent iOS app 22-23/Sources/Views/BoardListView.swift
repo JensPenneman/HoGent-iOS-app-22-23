@@ -54,7 +54,10 @@ struct BoardListView: View {
     }
     
     private func delete(_ boardTask: BoardTask) {
-        Task { await boardTaskViewModel.deleteBoardTask(boardTask) }
+        Task {
+            await boardTaskViewModel.deleteBoardTask(boardTask)
+            try? await boardMemberViewModel.refreshBoardMembers()
+        }
     }
 }
 
