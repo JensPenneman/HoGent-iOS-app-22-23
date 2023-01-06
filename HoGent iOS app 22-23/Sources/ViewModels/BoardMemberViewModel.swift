@@ -92,6 +92,14 @@ class BoardMemberViewModel: ObservableObject {
         try? await refreshBoardMembers()
     }
     
+    private func unrelateAll(from boardMember: BoardMember) async {
+        for boardTask in boardMember.boardtasks { await unrelate(task: boardTask, from: boardMember) }
+    }
+    
+    private func unrelateAll(from boardMemberId: UUID) async {
+        await unrelateAll(from: boardMembers.first(where: { boardMember in boardMember.id == boardMemberId })!)
+    }
+    
     func deleteBoardMember(_ boardMember: BoardMember) async {
         await deleteBoardMember(by: boardMember.id)
     }
@@ -103,7 +111,7 @@ class BoardMemberViewModel: ObservableObject {
             .delete()
             .equals(column: "id", value: id.uuidString)
         
-        //FIXME: Unrelate all tasks before deleting, otherwise delete won't work
+        await unrelateAll(from: id)
         await execute(query)
         try? await refreshBoardMembers()
     }
